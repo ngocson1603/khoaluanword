@@ -19,5 +19,6 @@ namespace Khoaluan.Models
         public List<Order> Orders { get; set; }
         public List<Market> Markets { get; set; }
         public List<Refund> Refunds { get; set; }
+        public virtual ICollection<Message> Messages { get; set; }
     }
 }

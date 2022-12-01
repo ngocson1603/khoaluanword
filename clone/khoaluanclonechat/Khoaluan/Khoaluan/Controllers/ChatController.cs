@@ -1,5 +1,6 @@
 ﻿using AspNetCoreHero.ToastNotification.Abstractions;
 using Khoaluan.Models;
+using Microsoft.AspNet.SignalR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -18,7 +19,8 @@ namespace Khoaluan.Controllers
             _unitOfWork = unitOfWork;
             _notyfService = notyfService;
         }
-        [Route("chat.html", Name = "Chat")]
+        [Authorize]
+        //[Route("chat.html", Name = "Chat")]
         public IActionResult Index()
         {
             var taikhoanID = HttpContext.Session.GetString("CustomerId");
@@ -28,22 +30,23 @@ namespace Khoaluan.Controllers
                 ViewBag.CurrentUserName = currentUser.HoTen;
                 ViewBag.Id = currentUser.Id;
             }
-            var messages = _unitOfWork.LibraryRepository.GetAll();
+            var messages = _unitOfWork.MessageRepository.getMess();
             return View(messages);
         }
-
-        //public async Task<IActionResult> Create(Message message)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        message.UserName = User.Identity.Name;
-        //        var sender = await _userManager.GetUserAsync(User);
-        //        message.UserID = sender.Id;
-        //        await _context.Messages.AddAsync(message);
-        //        await _context.SaveChangesAsync();
-        //        return Ok();
-        //    }
-        //    return View("Index");
-        //}
+        [Authorize]
+        public IActionResult Create(Message message)
+        {
+            if (ModelState.IsValid)
+            {
+                message.UserName = User.Identity.Name;
+                var taikhoanID = HttpContext.Session.GetString("CustomerId");
+                var sender = _unitOfWork.UserRepository.GetById(int.Parse(taikhoanID));
+                message.UserID = sender.Id;
+                _unitOfWork.MessageRepository.Create(message);
+                _unitOfWork.SaveChange();
+                return Ok();
+            }
+            return View("Index");
+        }
     }
 }

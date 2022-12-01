@@ -15,8 +15,8 @@ namespace Khoaluan.Models
         public string Text { get; set; }
         public DateTime When { get; set; }
 
-        public string UserID { get; set; }
-        public virtual AppUser Sender { get; set; }
+        public int UserID { get; set; }
+        public virtual Users Sender { get; set; }
 
         public Message()
         {

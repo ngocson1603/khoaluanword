@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Khoaluan.Models.Library>
+﻿@model IEnumerable<Khoaluan.Models.Message>
 @{
     ViewData["Title"] = "Home Page";
     var userName = User.Identity.Name;
@@ -15,10 +15,10 @@
         <div class="col-md-12" id="chat">
             @if (Model != null)
             {
-                @foreach (var message in Model)
+                @foreach (var message in Model.OrderBy(m => m.When))
                 {
                     string containerClass, timePosition, textAlign, contcolor, offset;
-                    if (ViewBag.Id == message.UserId)
+                    if (userName == message.UserName)
                     {
                         containerClass = "container darker";
                         timePosition = "time-right text-light";
@@ -34,18 +34,17 @@
                         contcolor = "bg-light";
                         offset = "";
                     }
+
                     <div class="row">
                         <div class="@offset">
                             <div class="@containerClass @contcolor">
 
-                                <p class="sender @textAlign">@message.ProductId</p>
-                                <p class="@textAlign">@message.UserId</p>
-                                @*<span class="@timePosition">@message.When.ToString("M/dd/yyyy hh:MM tt")</span>*@
+                                <p class="sender @textAlign">@message.UserName</p>
+                                <p class="@textAlign">@message.Text</p>
+                                <span class="@timePosition">@message.When.ToString("M/dd/yyyy hh:MM tt")</span>
                             </div>
                         </div>
-                    </div>
-                }
-            }
+                    </div>          }}
         </div>
         <div class="col-md-12">
             <form asp-action="Create"

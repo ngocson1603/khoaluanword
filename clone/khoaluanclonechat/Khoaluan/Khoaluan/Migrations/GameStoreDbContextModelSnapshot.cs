@@ -133,6 +133,37 @@ namespace Khoaluan.Migrations
                     b.ToTable("Market");
                 });
 
+            modelBuilder.Entity("Khoaluan.Models.Message", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("SenderId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserID")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("When")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SenderId");
+
+                    b.ToTable("Message");
+                });
+
             modelBuilder.Entity("Khoaluan.Models.Order", b =>
                 {
                     b.Property<int>("Id")
@@ -345,6 +376,15 @@ namespace Khoaluan.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Khoaluan.Models.Message", b =>
+                {
+                    b.HasOne("Khoaluan.Models.Users", "Sender")
+                        .WithMany("Messages")
+                        .HasForeignKey("SenderId");
+
+                    b.Navigation("Sender");
+                });
+
             modelBuilder.Entity("Khoaluan.Models.Order", b =>
                 {
                     b.HasOne("Khoaluan.Models.Users", "User")
@@ -466,6 +506,8 @@ namespace Khoaluan.Migrations
                     b.Navigation("Libraries");
 
                     b.Navigation("Markets");
+
+                    b.Navigation("Messages");
 
                     b.Navigation("Orders");
 
