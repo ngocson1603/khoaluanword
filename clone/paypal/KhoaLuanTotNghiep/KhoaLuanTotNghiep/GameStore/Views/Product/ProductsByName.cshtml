@@ -1,0 +1,22 @@
+﻿@model List<GameStore.Models.Product>
+@{
+    ViewData["Title"] = "Search Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row vertical-gap">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+            <div class="nk-gallery-item-group">
+                <a href="#" class="nk-gallery-item">
+                    <div class="nk-gallery-item-overlay"><span class="ion-eye"></span></div>
+                    <img src="~/Images/@item.Image" alt="">
+                </a>
+                <div class="nk-gallery-item-description">
+                    <h5 class="nk-gallery-item-description-title h5">@item.Name</h5>
+                </div>
+            </div>
+        </div>
+    }
+</div>
