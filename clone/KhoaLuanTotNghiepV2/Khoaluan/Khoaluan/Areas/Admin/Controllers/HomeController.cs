@@ -10,7 +10,7 @@ namespace DuAnGame.Areas.Admin.Controllers
     [Authorize(Roles = "Admin")]
     [Area("Admin")]
     [Route("admin.html", Name = "AdminIndex")]
-    public class HomeController : Controller
+    public class TrangController : Controller
     {
         public IActionResult Index()
         {

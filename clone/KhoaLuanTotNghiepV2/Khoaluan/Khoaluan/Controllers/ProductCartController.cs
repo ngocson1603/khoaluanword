@@ -74,9 +74,8 @@ namespace DuAnGame.Controllers
             }
         }
 
-        public void Sendemail(string emailaddress, List<Cart> ddh, int id_dh)
+        public void sendemail(string emailaddress, List<Cart> cart, int id_dh)
         {
-            int tongtien = 0;
             if (emailaddress.Length == 0)
             {
 
@@ -95,10 +94,10 @@ namespace DuAnGame.Controllers
                         Credentials = new NetworkCredential()
                         {
                             UserName = "sondovipro123@gmail.com",
-                            Password = "nsvzqfsoamrsatqf"
+                            Password = "caofqthenhkakkgl"
                         }
                     };
-                    MailAddress fromemail = new MailAddress("sondovipro123@gmail.com", "DEMO mail");
+                    MailAddress fromemail = new MailAddress("sondovipro123@gmail.com", "Xin chao");
                     MailAddress toemail = new MailAddress(emailaddress, "someone");
                     MailMessage mess = new MailMessage()
                     {
@@ -113,13 +112,14 @@ namespace DuAnGame.Controllers
                     mess.Body += "<table><thead>";
                     mess.Body += "<tr><th>Mã sản phẩm</th><th>Tên sản phẩm</th><th>Số lượng</th><th>Đơn giá</th></thead>";
                     mess.Body += "<tbody>";
-                    foreach (var item in ddh)
+                    int countprice = 0;
+                    foreach (var item in cart)
                     {
-                        mess.Body += "<tr><td>" + item.product.Id.ToString() + "</td>" + "<td>" + item.product.Name + "</td>" + "<td>" + item.product.ReleaseDate + "</td>" + "<td>" + item.product.Price.ToString() + "Đ</td></tr>";
-                        tongtien += item.product.Price;
+                        mess.Body += "<tr><td>" + item.product.Id.ToString() + "</td>" + "<td>" + item.product.Name + "</td>" + "<td>" + 1 + "</td>" + "<td>" + item.product.Price.ToString() + "Đ</td></tr>";
+                        countprice += item.product.Price;
                     }
                     mess.Body += "</tbody></table>";
-                    mess.Body += "<h4>Tổng tiền:" + tongtien.ToString() + "Đ</h4>";
+                    mess.Body += "<h4>Tổng tiền:" + countprice.ToString() + "Đ</h4>";
                     mess.To.Add(toemail);
                     client.Send(mess);
                 }
@@ -146,13 +146,14 @@ namespace DuAnGame.Controllers
                     return RedirectToRoute("Cart");
                 }
                 try
-                {
+                {  
                     var item = _unitOfWork.OrderRepository.createOrder(int.Parse(taikhoanID.ToString()), cart);
                     _unitOfWork.OrderRepository.Create(item);
                     _unitOfWork.LibraryRepository.updateLibrary(int.Parse(taikhoanID.ToString()), cart);
                     _unitOfWork.UserRepository.updateBalance(int.Parse(taikhoanID.ToString()), totalprice, type);
                     _unitOfWork.SaveChange();
-                    Sendemail(maKH.Gmail,cart, maKH.Id);
+                    int madh = _unitOfWork.OrderRepository.orderID(int.Parse(taikhoanID));
+                    sendemail(maKH.Gmail, cart, madh);
                     HttpContext.Session.Remove("_GioHang");
                     return Redirect("/ProductCart/CheckoutSuccess");
                 }

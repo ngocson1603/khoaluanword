@@ -66,6 +66,12 @@ namespace Khoaluan.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Passwork")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Developer");
@@ -77,6 +83,9 @@ namespace Khoaluan.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("ItemID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.HasKey("UserID", "ItemID");
@@ -95,6 +104,12 @@ namespace Khoaluan.Migrations
 
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MaxPrice")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MinPrice")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
@@ -140,6 +155,12 @@ namespace Khoaluan.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
+                    b.Property<int>("PricePerItem")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
@@ -153,6 +174,47 @@ namespace Khoaluan.Migrations
                     b.HasIndex("UserID");
 
                     b.ToTable("Market");
+                });
+
+            modelBuilder.Entity("Khoaluan.Models.MarketTransaction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BuyerID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateTransaction")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ItemID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MarketID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SellerID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TotalPrice")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BuyerID");
+
+                    b.HasIndex("ItemID");
+
+                    b.HasIndex("MarketID");
+
+                    b.HasIndex("SellerID");
+
+                    b.ToTable("MarketTransaction");
                 });
 
             modelBuilder.Entity("Khoaluan.Models.Order", b =>
@@ -225,6 +287,9 @@ namespace Khoaluan.Migrations
                     b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("DevId");
@@ -257,6 +322,9 @@ namespace Khoaluan.Migrations
                     b.Property<DateTime>("DatePurchase")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("OrderID")
+                        .HasColumnType("int");
+
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
@@ -270,6 +338,8 @@ namespace Khoaluan.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("OrderID");
 
                     b.HasIndex("ProductID");
 
@@ -373,6 +443,41 @@ namespace Khoaluan.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("Khoaluan.Models.MarketTransaction", b =>
+                {
+                    b.HasOne("Khoaluan.Models.Users", "Buyer")
+                        .WithMany("Buys")
+                        .HasForeignKey("BuyerID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Khoaluan.Models.Item", "Item")
+                        .WithMany("MarketTransactions")
+                        .HasForeignKey("ItemID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Khoaluan.Models.Market", "Market")
+                        .WithMany("MarketTransactions")
+                        .HasForeignKey("MarketID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Khoaluan.Models.Users", "Seller")
+                        .WithMany("Sells")
+                        .HasForeignKey("SellerID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Buyer");
+
+                    b.Navigation("Item");
+
+                    b.Navigation("Market");
+
+                    b.Navigation("Seller");
+                });
+
             modelBuilder.Entity("Khoaluan.Models.Order", b =>
                 {
                     b.HasOne("Khoaluan.Models.Users", "User")
@@ -435,6 +540,12 @@ namespace Khoaluan.Migrations
 
             modelBuilder.Entity("Khoaluan.Models.Refund", b =>
                 {
+                    b.HasOne("Khoaluan.Models.Order", "Order")
+                        .WithMany("Refunds")
+                        .HasForeignKey("OrderID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("Khoaluan.Models.Product", "Product")
                         .WithMany("Refunds")
                         .HasForeignKey("ProductID")
@@ -446,6 +557,8 @@ namespace Khoaluan.Migrations
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("Order");
 
                     b.Navigation("Product");
 
@@ -467,11 +580,20 @@ namespace Khoaluan.Migrations
                     b.Navigation("Inventories");
 
                     b.Navigation("Markets");
+
+                    b.Navigation("MarketTransactions");
+                });
+
+            modelBuilder.Entity("Khoaluan.Models.Market", b =>
+                {
+                    b.Navigation("MarketTransactions");
                 });
 
             modelBuilder.Entity("Khoaluan.Models.Order", b =>
                 {
                     b.Navigation("OrderDetails");
+
+                    b.Navigation("Refunds");
                 });
 
             modelBuilder.Entity("Khoaluan.Models.Product", b =>
@@ -489,6 +611,8 @@ namespace Khoaluan.Migrations
 
             modelBuilder.Entity("Khoaluan.Models.Users", b =>
                 {
+                    b.Navigation("Buys");
+
                     b.Navigation("Inventories");
 
                     b.Navigation("Libraries");
@@ -498,6 +622,8 @@ namespace Khoaluan.Migrations
                     b.Navigation("Orders");
 
                     b.Navigation("Refunds");
+
+                    b.Navigation("Sells");
                 });
 #pragma warning restore 612, 618
         }

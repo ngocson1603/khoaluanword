@@ -95,16 +95,16 @@ namespace Khoaluan.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["Developer"] = new SelectList(_unitOfWork.DeveloperRepository.GetAll(), "Id", "Name",product.DevId);
+            ViewData["Developer"] = new SelectList(_unitOfWork.DeveloperRepository.GetAll(), "Id", "Name", product.DevId);
             return View(product);
         }
 
         // POST: AdminProductsController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id,[Bind("Id,Name,Overview,Description,Price,Image,DevId,ReleaseDate")] Product product, Microsoft.AspNetCore.Http.IFormFile fThumb)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Overview,Description,Price,Image,DevId,ReleaseDate")] Product product, Microsoft.AspNetCore.Http.IFormFile fThumb)
         {
-            if(id!=product.Id)
+            if (id != product.Id)
             {
                 return NotFound();
             }
@@ -113,7 +113,7 @@ namespace Khoaluan.Areas.Admin.Controllers
                 product.Name = Utilities.ToTitleCase(product.Name);
                 if (fThumb != null)
                 {
-                    
+
 
                     string extension = Path.GetExtension(fThumb.FileName);
                     string images = Utilities.SEOUrl(product.Name) + extension;

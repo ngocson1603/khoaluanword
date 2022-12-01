@@ -12,6 +12,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="Areas\Dev\Views\Dev\LoginDev.cshtml" />
+    <Content Remove="Areas\Dev\Views\Shared\Error.cshtml" />
+    <Content Remove="Areas\Dev\Views\Shared\_AdminLayout.cshtml" />
+    <Content Remove="Areas\Dev\Views\Shared\_SideNavPartialView.cshtml" />
+    <Content Remove="Areas\Dev\Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <Content Remove="Areas\Dev\Views\Trang1\Index.cshtml" />
+    <Content Remove="Areas\Dev\Views\_ViewImports.cshtml" />
+    <Content Remove="Areas\Dev\Views\_ViewStart.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="Areas\Admin\Views\AdminProducts\Index.cshtml" />
     <None Include="Areas\Admin\Views\Home\Index.cshtml" />
     <None Include="Areas\Admin\Views\Search\ListProductsSearchPartial.cshtml" />
@@ -21,6 +32,14 @@
     <None Include="Areas\Admin\Views\Shared\_ValidationScriptsPartial.cshtml" />
     <None Include="Areas\Admin\Views\_ViewImports.cshtml" />
     <None Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <None Include="Areas\Dev\Views\Dev\LoginDev.cshtml" />
+    <None Include="Areas\Dev\Views\Shared\Error.cshtml" />
+    <None Include="Areas\Dev\Views\Shared\_AdminLayout.cshtml" />
+    <None Include="Areas\Dev\Views\Shared\_SideNavPartialView.cshtml" />
+    <None Include="Areas\Dev\Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="Areas\Dev\Views\Trang1\Index.cshtml" />
+    <None Include="Areas\Dev\Views\_ViewImports.cshtml" />
+    <None Include="Areas\Dev\Views\_ViewStart.cshtml" />
     <None Include="Views\About\AboutUs.cshtml" />
     <None Include="Views\Checkout\Check.cshtml" />
     <None Include="Views\Home\BlogArticle.cshtml" />
@@ -829,7 +848,6 @@
   <ItemGroup>
     <PackageReference Include="AspNetCoreHero.ToastNotification" Version="1.1.0" />
     <PackageReference Include="Dapper" Version="2.0.123" />
-    <PackageReference Include="LazZiya.ImageResize" Version="4.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.17" />
     <PackageReference Include="Microsoft.Build.Tasks.Core" Version="17.3.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
@@ -842,8 +860,7 @@
     <PackageReference Include="MongoDB.Driver" Version="2.18.0" />
     <PackageReference Include="MongoDB.Driver.Core" Version="2.18.0" />
     <PackageReference Include="PagedList.Core.Mvc" Version="3.0.0" />
-    <PackageReference Include="SixLabors.ImageSharp" Version="1.0.1" />
-    <PackageReference Include="Z.EntityFramework.Extensions.EFCore" Version="5.15.2" />
+    <PackageReference Include="Z.EntityFramework.Extensions.EFCore" Version="5.17.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -852,7 +869,7 @@
 
   <ItemGroup>
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Migrations\" />
+    <Folder Include="Areas\Dev\Data\" />
     <Folder Include="Views\Account\" />
     <Folder Include="Views\Forum\" />
     <Folder Include="wwwroot\php\instagram\cache\" />
