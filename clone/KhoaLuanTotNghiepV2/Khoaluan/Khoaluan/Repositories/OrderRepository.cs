@@ -25,7 +25,6 @@ namespace Khoaluan.Repositories
             int id = Context.Database.GetDbConnection().QuerySingle<int>(query, parameter);
             return id;
         }
-
         public Order createOrder(int userID, List<Cart> productPurchase)
         {
             List<OrderDetail> detail = new List<OrderDetail>();

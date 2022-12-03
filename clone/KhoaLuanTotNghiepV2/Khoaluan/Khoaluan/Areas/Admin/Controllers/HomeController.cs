@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace DuAnGame.Areas.Admin.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,Dev")]
     [Area("Admin")]
     [Route("admin.html", Name = "AdminIndex")]
-    public class TrangController : Controller
+    public class HomeController : Controller
     {
         public IActionResult Index()
         {

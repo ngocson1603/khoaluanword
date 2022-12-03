@@ -33,8 +33,8 @@ namespace Publico
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
-                options.MinimumSameSitePolicy = SameSiteMode.None;
+                //options.CheckConsentNeeded = context => true;
+                //options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
 
@@ -69,10 +69,10 @@ namespace Publico
             app.UseCookiePolicy();
 
             app.UseAuthentication();
-            app.UseSignalR(route =>
-            {
-                route.MapHub<ChatHub>("/Home/Index");
-            });
+            //app.UseSignalR(route =>
+            //{
+            //    route.MapHub<ChatHub>("/Home/Index");
+            //});
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
