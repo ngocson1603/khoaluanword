@@ -8,13 +8,13 @@
 // myDisplay();
 
 // "use strict"
-var fullname = "nguyen ngoc son"
-function test() {
-    age = 18;
-}
-test()
-console.log(fullname)
-console.log(age)
+// var fullname = "nguyen ngoc son"
+// function test() {
+//     age = 18;
+// }
+// test()
+// console.log(fullname)
+// console.log(age)
 
 //this
 // function Name(ten, ho) {

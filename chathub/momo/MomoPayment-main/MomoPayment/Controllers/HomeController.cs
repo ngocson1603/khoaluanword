@@ -25,10 +25,10 @@ namespace MomoPayment.Controllers
             string serectkey = "sFcbSGRSJjwGxwhhcEktCHWYUuTuPNDB";
             string orderInfo = "test";
             string returnUrl = "https://localhost:44394/Home/ConfirmPaymentClient";
-            string notifyurl = "https://4c8d-2001-ee0-5045-50-58c1-b2ec-3123-740d.ap.ngrok.io/Home/SavePayment"; //lưu ý: notifyurl không được sử dụng localhost, có thể sử dụng ngrok để public localhost trong quá trình test
+            string notifyurl = "https://ae4b-118-69-224-112.ap.ngrok.io/Home/SavePayment"; //lưu ý: notifyurl không được sử dụng localhost, có thể sử dụng ngrok để public localhost trong quá trình test
 
-            string amount = "1000";
-            string orderid = DateTime.Now.Ticks.ToString(); //mã đơn hàng
+            string amount = "10000";
+            string orderid = "123"; //mã đơn hàng
             string requestId = DateTime.Now.Ticks.ToString();
             string extraData = "";
 
