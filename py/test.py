@@ -8,3 +8,14 @@
 # import module
 
 # module.greeting("Jonathan")
+
+# connect mongo
+import pymongo
+
+myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+mydb = myclient["Forum"]
+mycol = mydb["Discussion"]
+mydoc = mycol.find().sort("_id")
+
+for x in mydoc:
+    print(x)
