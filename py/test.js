@@ -101,23 +101,23 @@
 // getFull.call(this)
 
 //oop
-// function Animal(name, weight) {
-//     this.name = name
-//     this.weight = weight
-// }
-// function Chicken(name, weight, legs) {
-//     Animal.call(this, name, weight)
-//     this.legs = legs
-// }
-// const son = new Chicken("son nguyen", 2, 2)
-// console.log(son)
+function Animal(name, weight) {
+    this.name = name
+    this.weight = weight
+}
+function Chicken(name, weight, legs) {
+    Animal.call(this, name, weight)
+    this.legs = legs
+}
+const son = new Chicken("son nguyen", 2, 5)
+console.log(son)
 
 //muon ham
 // function logger() {
+//     //const arr = Array.from(arguments)
 //     const arr = [...arguments]
 //     console.log(arr)
 // }
-
 // logger(1, 2, 3, 4, 5)
 
 //apply
