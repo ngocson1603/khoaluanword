@@ -101,16 +101,16 @@
 // getFull.call(this)
 
 //oop
-function Animal(name, weight) {
-    this.name = name
-    this.weight = weight
-}
-function Chicken(name, weight, legs) {
-    Animal.call(this, name, weight)
-    this.legs = legs
-}
-const son = new Chicken("son nguyen", 2, 5)
-console.log(son)
+// function Animal(name, weight) {
+//     this.name = name
+//     this.weight = weight
+// }
+// function Chicken(name, weight, legs) {
+//     Animal.call(this, name, weight)
+//     this.legs = legs
+// }
+// const son = new Chicken("son nguyen", 2, 5)
+// console.log(son)
 
 //muon ham
 // function logger() {
@@ -200,3 +200,32 @@ console.log(son)
 // const setting = createStorage("settings");
 // console.log(setting.set("name"));
 // setting.set("name", "nguyen ngoc son");
+
+//built in
+// alert("Thong bao");
+// console.log("thong bao");
+// confirm("thong bao");
+// prompt("thong bao");
+
+// setTimeout(() => {
+//   alert("thong bao");
+// }, 1000);
+
+// setInterval(function () {
+//   alert("thong bao");
+// }, 1000);
+
+// getElementById
+// getElementByClassName
+// getElementByTagName theo thẻ tag
+// var headings = document.getElementsByTagName("h1");
+// console.log(headings[1]);
+// querySelector css
+// querySelectorAll
+// Html collection
+// console.log(document.forms);
+// document.write("hello");
+// var headings = document.querySelectorAll(".heading");
+// for (var i = 0; i, headings.length; i++) {
+//   console.log(headings[i]);
+// }
