@@ -23,11 +23,15 @@
         </tr>
       </thead>
       <tbody>
-        {% for x in department_list %}
+        {% if department_list == Null %}
+        <h1>Null</h1>
+        {% endif %} {% for department in department_list %}
         <tr>
-          <td>{{x.department_id}}</td>
-          <td>{{x.name}}</td>
-          <td><a href="/department/{{x.department_id}}">Chi tiết</a></td>
+          <td>{{department.department_id}}</td>
+          <td>{{department.name}}</td>
+          <td>
+            <a href="/department/{{department.department_id}}">Chi tiết</a>
+          </td>
         </tr>
         {% endfor %}
       </tbody>
