@@ -25,6 +25,8 @@
       <tbody>
         {% if department_list == Null %}
         <h1>Null</h1>
+        {% else %}
+        <h1>NOT Null</h1>
         {% endif %} {% for department in department_list %}
         <tr>
           <td>{{department.department_id}}</td>
