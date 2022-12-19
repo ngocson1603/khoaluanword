@@ -8,9 +8,29 @@
   </head>
   <body>
     <h3>Demo</h3>
+    {% comment %}
     <h1>Hello {{ firstname }}, how are you?</h1>
 
     <p>In views.py you can see how to create the variable.</p>
     <p>In template.html you can see how to use the variable.</p>
+    {% endcomment %}
+    <table>
+      <thead>
+        <tr>
+          <td>Id</td>
+          <td>Tên phòng ban</td>
+          <td>Chức năng</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for x in department_list %}
+        <tr>
+          <td>{{x.department_id}}</td>
+          <td>{{x.name}}</td>
+          <td><a href="/department/{{x.department_id}}">Chi tiết</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </body>
 </html>
