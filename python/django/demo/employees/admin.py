@@ -4,9 +4,11 @@ from .models import employees
 
 
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ('employee_id', 'department_id', 'name', 'age')
+    list_display = ('employee_id', 'department_id',
+                    'name', 'age', 'avatar', 'cv')
     search_fields = ['name']
-    list_filter = ('employee_id', 'department_id', 'name', 'age')
+    list_filter = ('employee_id', 'department_id',
+                   'name', 'age', 'avatar', 'cv')
 
 
 admin.site.register(employees, EmployeeAdmin)

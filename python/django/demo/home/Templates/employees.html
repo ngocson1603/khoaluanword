@@ -1,0 +1,46 @@
+{% extends 'common/layout.html' %} {% block body%}
+<body>
+  <!--[if lt IE 7]>
+    <p class="browsehappy">
+      You are using an <strong>outdated</strong> browser. Please
+      <a href="#">upgrade your browser</a> to improve your experience.
+    </p>
+  <![endif]-->
+  <h3>Employees</h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>Id</td>
+        <td>Tên nhân viên</td>
+        <td>Tuổi</td>
+        <td>Ảnh đại diện</td>
+        <td>CV</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% for employee in employee_list %}
+      <tr>
+        <td>{{employee.employee_id}}</td>
+        <td>{{employee.name}}</td>
+        <td>{{employee.age}}</td>
+        <td>
+          <img
+            src="/home/media/{{employee.avatar}}"
+            alt=""
+            class="img"
+            style="width: 80px; height: 80px"
+          />
+        </td>
+        <td>
+          <a href="/home/media/{{employee.cv}}" target="_blank"
+            >{{employee.cv}}
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <a href="/addEmployeeForm" class="btn btn-primary">Them moi</a>
+  <script src="" async defer></script>
+</body>
+{% endblock %}

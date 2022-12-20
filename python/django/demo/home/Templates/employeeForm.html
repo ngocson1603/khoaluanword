@@ -1,0 +1,29 @@
+{% extends 'common/layout.html' %} {% block body %}
+<h3>Them nhan vien</h3>
+<form
+  action="/addEmployee"
+  class="form-contact"
+  method="post"
+  enctype="multipart/form-data"
+  style="margin-left: 50px,margin-top:60px"
+>
+  {% csrf_token %}
+  <label for="department" style="width: 150px">Phòng ban</label>
+  <select name="department" id="department">
+    <option value="">-----hãy chọn-----</option>
+    {% for department in department_list %}
+    <option value="{{department.department_id}}">
+      {{department.name}} {% endfor %}
+    </option></select
+  ><br />
+  <label for="fullname" style="width: 150px">Tên nhân viên</label>
+  <input type="text" name="fullname" /><br />
+  <label for="age" style="width: 150px">Tuổi</label>
+  <input type="number" name="age" /><br />
+  <label for="avatar" style="width: 150px">Ảnh đại diện</label>
+  <input type="file" name="avatar" /><br />
+  <label for="cv" style="width: 150px">CV</label>
+  <input type="file" name="cv" /><br />
+  <button class="btn btn-primary" type="submit">Thêm</button>
+</form>
+{% endblock %}

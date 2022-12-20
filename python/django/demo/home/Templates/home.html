@@ -1,42 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h3>Demo</h3>
-    {% comment %}
-    <h1>Hello {{ firstname }}, how are you?</h1>
+{% extends 'common/layout.html' %} {% block body%}
+<body>
+  <h3>Demo</h3>
+  {% comment %}
+  <h1>Hello {{ firstname }}, how are you?</h1>
 
-    <p>In views.py you can see how to create the variable.</p>
-    <p>In template.html you can see how to use the variable.</p>
-    {% endcomment %}
-    <table>
-      <thead>
-        <tr>
-          <td>Id</td>
-          <td>Tên phòng ban</td>
-          <td>Chức năng</td>
-        </tr>
-      </thead>
-      <tbody>
-        {% if department_list == Null %}
-        <h1>Null</h1>
-        {% else %}
-        <h1>NOT Null</h1>
-        {% endif %} {% for department in department_list %}
-        <tr>
-          <td>{{department.department_id}}</td>
-          <td>{{department.name}}</td>
-          <td>
-            <a href="/department/{{department.department_id}}">Chi tiết</a>
-          </td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </body>
-</html>
+  <p>In views.py you can see how to create the variable.</p>
+  <p>In template.html you can see how to use the variable.</p>
+  {% endcomment %}
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <td>Id</td>
+        <td>Tên phòng ban</td>
+        <td>Chức năng</td>
+      </tr>
+    </thead>
+    <tbody>
+      {% if department_list == Null %}
+      <h1>Null</h1>
+      {% else %}
+      <h1>NOT Null</h1>
+      {% endif %} {% for department in department_list %}
+      <tr>
+        <td>{{department.department_id}}</td>
+        <td>{{department.name}}</td>
+        <td>
+          <a href="/department/{{department.department_id}}">Chi tiết</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+{% endblock %}

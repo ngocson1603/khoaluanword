@@ -10,12 +10,30 @@
 # module.greeting("Jonathan")
 
 # connect mongo
-import pymongo
+# import pymongo
 
-myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-mydb = myclient["Forum"]
-mycol = mydb["Discussion"]
-mydoc = mycol.find().sort("_id")
+# myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+# mydb = myclient["Forum"]
+# mycol = mydb["Discussion"]
+# mydoc = mycol.find().sort("_id")
 
-for x in mydoc:
+# for x in mydoc:
+#     print(x)
+
+import mysql.connector
+
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="sa",
+    password="123",
+    database="GameStore"
+)
+
+mycursor = mydb.cursor()
+
+mycursor.execute("SELECT * FROM Product")
+
+myresult = mycursor.fetchall()
+
+for x in myresult:
     print(x)
