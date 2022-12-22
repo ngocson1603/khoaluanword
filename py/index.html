@@ -32,17 +32,31 @@
     <from action="" id="from-1"></from>
     <from action="" id="from-2"></from>
     <h1 id="demo"> API</h1>
+    <h6 id="my-element"> API</h6>
+    
     <script src="test.js"></script>
-    <!-- <script>
+    <script>
 
 fetch('http://localhost:3000/api/sanpham')
   .then((response) => response.json())
-  .then((data) => console.log(data));
+  .then((data) =>  {
+    // Get a reference to the element where you want to display the data
+    const element = document.getElementById('my-element');
+    // Set the element's content to the data returned by the API
+    for (const item of data) {
+      // Create an HTML element for each item
+      const itemElement = document.createElement('div');
+      // Set the element's content to the item's data
+      itemElement.innerHTML = `<div style="border: 5px solid">Name: ${item.id}<br>Age: ${item.pro_name}<br>Image: <img src="${item.img}" height="100px", width= "100px" /></div>`;
+      // Append the element to the list element
+      element.appendChild(itemElement);
+    }
+  });
 
-  fetch('http://127.0.0.1:8000/',{mode:'cors'})
-  .then((response) => response.json())
-  .then((data) => console.log(data));
-        </script> -->
+//   fetch('http://127.0.0.1:8000/',{mode:'cors'})
+//   .then((response) => response.json())
+//   .then((data) => console.log(data));
+        </script>
 </body>
 
 </html>

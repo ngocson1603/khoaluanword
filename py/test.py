@@ -20,20 +20,42 @@
 # for x in mydoc:
 #     print(x)
 
-import mysql.connector
+# import mysql.connector
 
-mydb = mysql.connector.connect(
-    host="localhost",
-    user="sa",
-    password="123",
-    database="GameStore"
-)
+# mydb = mysql.connector.connect(
+#     host="localhost",
+#     user="sa",
+#     password="123",
+#     database="GameStore"
+# )
 
-mycursor = mydb.cursor()
+# mycursor = mydb.cursor()
 
-mycursor.execute("SELECT * FROM Product")
+# mycursor.execute("SELECT * FROM Product")
 
-myresult = mycursor.fetchall()
+# myresult = mycursor.fetchall()
 
-for x in myresult:
-    print(x)
+# for x in myresult:
+#     print(x)
+import pandas as pd
+import pyodbc
+conn = pyodbc.connect('DRIVER={SQL Server};'
+                      'SERVER=MSI\SQLEXPRESS;'
+                      'DATABASE=GameStore;'
+                      'Trusted_Connection=yes;')
+# pandas
+df = pd.read_sql_query('SELECT * FROM Product', conn)
+print(df)
+print(type(df))
+# pandas
+
+
+# # Create a cursor
+# cursor = cnxn.cursor()
+
+# # Execute a query
+# cursor.execute('SELECT * FROM Product')
+
+# # Iterate over the results
+# for row in cursor:
+#     print(row)
