@@ -1,0 +1,64 @@
+// sum llist of timespans
+TimeSpan total = new TimeSpan(list.Sum(t => t.Ticks));
+
+//regex: one or many words with space @ and numbers
+Regex rg = new Regex(@"(?<singer>(\w+ )+)@(?<venue>(\w+ )+)(?<ticketPrice>\d+ )(?<ticketCount>\d+)");
+Match match = rg.Match(input);
+
+string venue = match.Groups["venue"].Value.Trim();
+string singer = match.Groups["singer"].Value.Trim();
+string ticketPrice = match.Groups["ticketPrice"].Value.Trim();
+string ticketCount = match.Groups["ticketCount"].Value.Trim();
+decimal profit = decimal.Parse(ticketCount) * decimal.Parse(ticketPrice);
+// Lepa Brena @Sunny Beach 25 3500
+// Ceca @Beach 70 15000
+
+// Dictionaries ..........................................................................
+Dictionary<string, int> day = new Dictionary<string, int>()
+{
+	{"Monday",1 },{"Tuesday",2 },{"Wednesday",3 },{"Thursday",4},{"Friday",5 },{"Saturday",6 },{"Sunday",7 }
+};
+
+
+Dictionary<string, long> teams = new Dictionary<string, long>();
+teams.Add("Arsenal",0);
+teams.Add("Chelsea", 0);
+
+
+	if (!teams.ContainsKey(value))
+	{
+		teams.Add(value, 0);
+	}
+	else
+	{
+		teams[value]++;
+	}
+
+	
+	foreach (var team in teams)
+	{
+		string t = team.Key;
+		if (team.Key == "ManchesterCity")
+		{
+			// .........;
+		}
+	}
+	
+// digits as words	
+private static string DigitToWord(string digit)
+{        
+	switch (digit)
+	{
+		case "0": return "zero";
+		case "1": return "one";
+		case "2": return "two";
+		case "3": return "three";
+		case "4": return "four";
+		case "5": return "five";
+		case "6": return "six";
+		case "7": return "seven";
+		case "8": return "eight";
+		case "9": return "nine";  
+		default: return "not a digit";
+	}
+}

@@ -13,84 +13,84 @@ namespace Chatty.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "D:\DULIEUHOCTAP\KhoaLuan\khoaluanword\chathub\dongon\signalr-blazorserver-main\_Imports.razor"
+#line 1 "C:\Users\Admins\OneDrive\Máy tính\khoaluanword\chathub\dongon\signalr-blazorserver-main\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\DULIEUHOCTAP\KhoaLuan\khoaluanword\chathub\dongon\signalr-blazorserver-main\_Imports.razor"
+#line 2 "C:\Users\Admins\OneDrive\Máy tính\khoaluanword\chathub\dongon\signalr-blazorserver-main\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\DULIEUHOCTAP\KhoaLuan\khoaluanword\chathub\dongon\signalr-blazorserver-main\_Imports.razor"
+#line 3 "C:\Users\Admins\OneDrive\Máy tính\khoaluanword\chathub\dongon\signalr-blazorserver-main\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\DULIEUHOCTAP\KhoaLuan\khoaluanword\chathub\dongon\signalr-blazorserver-main\_Imports.razor"
+#line 4 "C:\Users\Admins\OneDrive\Máy tính\khoaluanword\chathub\dongon\signalr-blazorserver-main\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\DULIEUHOCTAP\KhoaLuan\khoaluanword\chathub\dongon\signalr-blazorserver-main\_Imports.razor"
+#line 5 "C:\Users\Admins\OneDrive\Máy tính\khoaluanword\chathub\dongon\signalr-blazorserver-main\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "D:\DULIEUHOCTAP\KhoaLuan\khoaluanword\chathub\dongon\signalr-blazorserver-main\_Imports.razor"
+#line 6 "C:\Users\Admins\OneDrive\Máy tính\khoaluanword\chathub\dongon\signalr-blazorserver-main\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "D:\DULIEUHOCTAP\KhoaLuan\khoaluanword\chathub\dongon\signalr-blazorserver-main\_Imports.razor"
+#line 7 "C:\Users\Admins\OneDrive\Máy tính\khoaluanword\chathub\dongon\signalr-blazorserver-main\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "D:\DULIEUHOCTAP\KhoaLuan\khoaluanword\chathub\dongon\signalr-blazorserver-main\_Imports.razor"
+#line 8 "C:\Users\Admins\OneDrive\Máy tính\khoaluanword\chathub\dongon\signalr-blazorserver-main\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "D:\DULIEUHOCTAP\KhoaLuan\khoaluanword\chathub\dongon\signalr-blazorserver-main\_Imports.razor"
+#line 9 "C:\Users\Admins\OneDrive\Máy tính\khoaluanword\chathub\dongon\signalr-blazorserver-main\_Imports.razor"
 using Chatty;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "D:\DULIEUHOCTAP\KhoaLuan\khoaluanword\chathub\dongon\signalr-blazorserver-main\_Imports.razor"
+#line 10 "C:\Users\Admins\OneDrive\Máy tính\khoaluanword\chathub\dongon\signalr-blazorserver-main\_Imports.razor"
 using Chatty.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\DULIEUHOCTAP\KhoaLuan\khoaluanword\chathub\dongon\signalr-blazorserver-main\Pages\Index.razor"
+#line 2 "C:\Users\Admins\OneDrive\Máy tính\khoaluanword\chathub\dongon\signalr-blazorserver-main\Pages\Index.razor"
 using Microsoft.AspNetCore.SignalR.Client;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\DULIEUHOCTAP\KhoaLuan\khoaluanword\chathub\dongon\signalr-blazorserver-main\Pages\Index.razor"
+#line 3 "C:\Users\Admins\OneDrive\Máy tính\khoaluanword\chathub\dongon\signalr-blazorserver-main\Pages\Index.razor"
 using Models;
 
 #line default
@@ -105,7 +105,7 @@ using Models;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 45 "D:\DULIEUHOCTAP\KhoaLuan\khoaluanword\chathub\dongon\signalr-blazorserver-main\Pages\Index.razor"
+#line 45 "C:\Users\Admins\OneDrive\Máy tính\khoaluanword\chathub\dongon\signalr-blazorserver-main\Pages\Index.razor"
       
     private HubConnection hubConnection;
     private List<UserMessage> userMessages = new();

@@ -1,0 +1,56 @@
+After r rotations the element at position i goes to position (i + r) % n.
+
+string command;
+while ((command = Console.ReadLine()).Trim()!= "Exam Over")
+{
+	//string[] param = command.Split(new[] {' '},StringSplitOptions.RemoveEmptyEntries);
+	string[] param = command.Split();
+	long amount = long.Parse(param[0]);
+	string type = param[1];
+	
+	if (type == "beers")
+	{
+
+	}
+	else if (type == "sixpacks")
+	{
+
+	}
+	else if (type == "cases")
+	{
+
+	}
+}
+
+/////////////////////////
+// "continue" instead "break", to skip invalid input lines.
+//
+//input  format can be array of strings instead numbers, sorting string numbers works difrently
+//
+// group regex maches in a single string , before further processing (UseYourChainsBuddy)
+//
+//string split separator can be whitespace instead of space, so use  s.Split(new char[0], StringSplitOptons....) 
+//  or Split(new []{' ','\t'}) - includes split \t for tabs
+//
+// on numbers in strings trim leading zeroes
+//
+// StringBuilder.Append or AppendLine
+//
+// increase variables size eg.(int to long)
+// test edge cases, +1 and -1, with odd and even number of parameters(if flipping values)
+// reread conditions, special cases;
+//
+// concatenating strings after split, may create new patterns:
+// ">>>>>----->----->>>>>----->".split(">>----->") = ">>>----->>>" 
+// ,to prevent add new character like space: ">>> ----->"
+//
+// alphabetical order for collections
+//
+// repeating dragon Names in collection are ignored ???
+//
+// WriteLine(stringbuilder) instead Wtriteline((array of numbers).ToString()) for memory limit.
+//
+// team names can be empty Strings "??team??___????_1:2"
+// team point at str[pos] can be more than one char
+//
+// coffee supplies => "out of coffe messages" should be printed when occure in the body of the program, not from a collection later;

@@ -1,0 +1,54 @@
+﻿@model Chat.Models.Profile.ProfileIndexView
+@{
+	ViewData["Title"] = "Profile";
+}
+
+<div class="chatMainBox">
+	<div class="chatContactsBox">
+		<h4 class="well">CONTACTS</h4>
+		<ul id="friendsList"  class="scrollable-menu">
+			@foreach (var contact in Model.Contacts)
+			{
+				<li class="btn chatContact">
+					<div id="@contact.Id">
+						<img src="@Url.Content(contact.Avatar)" alt="Image" class="avatar" />
+						<label>@contact.NickName</label>
+					</div>
+				</li>
+			}
+		</ul>
+	</div>
+	<div class="chatContentBox">
+		<div class="chatDisplayBox scrollable-menu">
+			<div class="chatDisplayMessages scrollable-menu">
+				<ul id="messages"></ul>
+			</div>
+			<div class="chatDisplayInfo">
+				<h4 class="well">CONTACT INFO</h4>
+				<div id="profileInfoPanel" class="hidden">
+					<img id="profileImage" /><br />
+					<label id="profileName"></label><br />
+					<label id="profileEmail"></label><br />
+					<label id="profileRegisteredOn"></label><br />
+					<label id="profileContactsCount"></label><br />
+					<input type="hidden" id="FriendId" value="" />
+					<input class="btn-info btn btn-sm" id="removeContact" value="Remove Contact" />
+				</div>
+			</div>
+		</div>
+		<div class="chatSendMessage">
+			<input type="text" id="message" value="" />
+			<button id="send-message">Send</button>
+		</div>
+	</div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>
+
+<script type="text/javascript">
+	let Model_Id = "@Model.Id";
+	let Model_NickName = "@Model.NickName";
+	let Model_Avatar = "@Model.Avatar";
+</script>
