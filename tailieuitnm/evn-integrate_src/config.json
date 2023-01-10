@@ -1,0 +1,33 @@
+{
+    "Debug": true,
+    "Log": {
+        "Path": "./log/",
+        "FileName": "sdp_jira.log"
+    },
+    "server": {
+        "port": ":9090"
+    },
+    "SqlServer": {
+        "host": "localhost\\DIOSQL",
+        "port": 1433,
+        "user": "sa",
+        "password": "test1",
+        "database": "evn",
+        "active": 50,
+        "idle": 50,
+        "lifetime": 60
+    },
+    "Jira": {
+        "host": "http://jira.evn.com.vn",
+        "username": "",
+        "password": "",
+        "version": "2"
+    },
+    "SDP": {
+        "host": "https://sdp.evn.com.vn",
+        "token": "75C3A95F-6E4E-4BC0-8FFE-E7470B07FDXX"
+    },
+    "Projects": {
+        "1204": "MDMS"
+    }
+}
