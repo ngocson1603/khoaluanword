@@ -148,7 +148,7 @@
 	    (object Class "MHCheckOut"
 		quid       	"5DE0213A0196"
 		stereotype 	"boundary")
-	    (object Class "MHPayPal"
+	    (object Class "MHPhuongThuc"
 		quid       	"5DE0218C01A5"
 		stereotype 	"boundary")
 	    (object Class "MHThanhToan"
@@ -1331,7 +1331,7 @@
 					ordinal    	8
 					quidu      	"000000000000"
 					creation   	FALSE))))
-			class      	"Logical View::MHPayPal"
+			class      	"Logical View::MHPhuongThuc"
 			quidu      	"5DE0218C01A5"
 			persistence 	"Transient"
 			creationObj 	FALSE
@@ -1610,56 +1610,7 @@
 			height     	126
 			annotation 	8
 			autoResize 	TRUE)
-		    (object ClassView "Class" "Logical View::MHSanPham" @20
-			ShowCompartmentStereotypes 	TRUE
-			IncludeAttribute 	TRUE
-			IncludeOperation 	TRUE
-			location   	(1232, 208)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@20
-			    location   	(988, 140)
-			    fill_color 	13434879
-			    nlines     	1
-			    max_width  	488
-			    justify    	0
-			    label      	"MHSanPham")
-			icon       	"boundary"
-			icon_style 	"Decoration"
-			line_color 	3342489
-			fill_color 	13434879
-			quidu      	"5DE0002601C5"
-			compartment 	(object Compartment
-			    Parent_View 	@20
-			    location   	(988, 201)
-			    font       	(object Font
-				size       	10
-				face       	"Arial"
-				bold       	FALSE
-				italics    	FALSE
-				underline  	FALSE
-				strike     	FALSE
-				color      	0
-				default_color 	TRUE)
-			    icon_style 	"Icon"
-			    fill_color 	13434879
-			    anchor     	2
-			    nlines     	3
-			    max_width  	378
-			    justify    	1)
-			width      	506
-			height     	326
-			annotation 	8
-			autoResize 	TRUE)
-		    (object ClassView "Class" "Logical View::SanPham" @21
+		    (object ClassView "Class" "Logical View::SanPham" @20
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -1674,7 +1625,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@21
+			    Parent_View 	@20
 			    location   	(1146, 621)
 			    fill_color 	13434879
 			    nlines     	1
@@ -1689,7 +1640,7 @@
 			height     	126
 			annotation 	8
 			autoResize 	TRUE)
-		    (object AssociationViewNew "$UNNAMED$6" @22
+		    (object AssociationViewNew "$UNNAMED$6" @21
 			location   	(1248, 839)
 			font       	(object Font
 			    size       	10
@@ -1704,30 +1655,79 @@
 			line_color 	3342489
 			quidu      	"5DE030AB0138"
 			roleview_list 	(list RoleViews
-			    (object RoleView "$UNNAMED$7" @23
-				Parent_View 	@22
+			    (object RoleView "$UNNAMED$7" @22
+				Parent_View 	@21
 				location   	(0, 247)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5DE030AB02EE"
-				client     	@22
+				client     	@21
 				supplier   	@19
 				vertices   	(list Points
 				    (1248, 839)
 				    (1248, 944))
 				line_style 	0)
-			    (object RoleView "$UNNAMED$8" @24
-				Parent_View 	@22
+			    (object RoleView "$UNNAMED$8" @23
+				Parent_View 	@21
 				location   	(0, 247)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5DE030AB02F0"
-				client     	@22
-				supplier   	@21
+				client     	@21
+				supplier   	@20
 				vertices   	(list Points
 				    (1248, 839)
 				    (1248, 735))
 				line_style 	0)))
+		    (object ClassView "Class" "Logical View::MHSanPham" @24
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(1232, 208)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@24
+			    location   	(988, 140)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	488
+			    justify    	0
+			    label      	"MHSanPham")
+			icon       	"boundary"
+			icon_style 	"Decoration"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5DE0002601C5"
+			compartment 	(object Compartment
+			    Parent_View 	@24
+			    location   	(988, 201)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	3
+			    max_width  	396
+			    justify    	1)
+			width      	506
+			height     	326
+			annotation 	8
+			autoResize 	TRUE)
 		    (object AssociationViewNew "$UNNAMED$12" @25
 			location   	(1241, 489)
 			font       	(object Font
@@ -1750,7 +1750,7 @@
 				line_color 	3342489
 				quidu      	"5DE0313B0261"
 				client     	@25
-				supplier   	@21
+				supplier   	@20
 				vertices   	(list Points
 				    (1241, 489)
 				    (1245, 608))
@@ -1762,7 +1762,7 @@
 				line_color 	3342489
 				quidu      	"5DE0313B0263"
 				client     	@25
-				supplier   	@20
+				supplier   	@24
 				vertices   	(list Points
 				    (1241, 489)
 				    (1237, 371))
@@ -1939,7 +1939,7 @@
 			    location   	(1568, 250)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	284
+			    max_width  	687
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -1947,7 +1947,7 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE0015C035B"
-			width      	296
+			width      	229
 			height     	2342
 			icon_height 	153
 			icon_width 	229
@@ -1983,7 +1983,7 @@
 			    location   	(1936, 249)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	278
+			    max_width  	471
 			    justify    	0
 			    label      	"")
 			icon       	"control"
@@ -1991,7 +1991,7 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE002A80261"
-			width      	290
+			width      	157
 			height     	2342
 			icon_height 	164
 			icon_width 	157
@@ -2565,7 +2565,7 @@
 			    default_color 	TRUE)
 			label      	(object SegLabel @77
 			    Parent_View 	@76
-			    location   	(2487, 1148)
+			    location   	(2486, 1148)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -2858,7 +2858,7 @@
 			    location   	(176, 249)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	324
+			    max_width  	360
 			    justify    	0
 			    label      	"")
 			icon       	"Actor"
@@ -2866,10 +2866,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE00BAB032C"
-			width      	300
-			height     	1158
-			icon_height 	150
-			icon_width 	108
+			width      	120
+			height     	1157
+			icon_height 	162
+			icon_width 	120
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @91
@@ -2902,7 +2902,7 @@
 			    location   	(544, 250)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	651
+			    max_width  	687
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -2910,10 +2910,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE00BAE01B5"
-			width      	300
-			height     	1158
-			icon_height 	141
-			icon_width 	217
+			width      	229
+			height     	1157
+			icon_height 	153
+			icon_width 	229
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @94
@@ -2939,7 +2939,7 @@
 			    location   	(912, 250)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	651
+			    max_width  	687
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -2947,10 +2947,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE00C02037A"
-			width      	300
-			height     	1158
-			icon_height 	141
-			icon_width 	217
+			width      	229
+			height     	1157
+			icon_height 	153
+			icon_width 	229
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @96
@@ -2990,7 +2990,7 @@
 			    location   	(1840, 249)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	324
+			    max_width  	360
 			    justify    	0
 			    label      	"")
 			icon       	"Actor"
@@ -2998,10 +2998,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE00E110148"
-			width      	300
-			height     	1158
-			icon_height 	150
-			icon_width 	108
+			width      	120
+			height     	1157
+			icon_height 	162
+			icon_width 	120
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @100
@@ -3027,7 +3027,7 @@
 			    location   	(1456, 265)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	435
+			    max_width  	471
 			    justify    	0
 			    label      	"")
 			icon       	"control"
@@ -3035,10 +3035,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE00E1300EA"
-			width      	300
-			height     	1142
-			icon_height 	152
-			icon_width 	145
+			width      	157
+			height     	1141
+			icon_height 	164
+			icon_width 	157
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @102
@@ -3217,7 +3217,7 @@
 			ordinal    	3)
 		    (object Destruction_Marker @112
 			Parent_View 	@90
-			location   	(176, 1382)
+			location   	(176, 1381)
 			line_color 	3342489
 			fill_color 	13434879)
 		    (object InterMessView "YeuCauDuyet" @113
@@ -3406,7 +3406,7 @@
 			    location   	(176, 249)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	324
+			    max_width  	360
 			    justify    	0
 			    label      	"")
 			icon       	"Actor"
@@ -3414,10 +3414,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE00D9B032C"
-			width      	300
+			width      	120
 			height     	932
-			icon_height 	150
-			icon_width 	108
+			icon_height 	162
+			icon_width 	120
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @122
@@ -3450,7 +3450,7 @@
 			    location   	(544, 250)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	651
+			    max_width  	687
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -3458,10 +3458,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE00DA500EA"
-			width      	300
+			width      	229
 			height     	932
-			icon_height 	141
-			icon_width 	217
+			icon_height 	153
+			icon_width 	229
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @125
@@ -3487,7 +3487,7 @@
 			    location   	(912, 250)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	651
+			    max_width  	687
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -3495,10 +3495,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE00F4800BB"
-			width      	300
+			width      	229
 			height     	932
-			icon_height 	141
-			icon_width 	217
+			icon_height 	153
+			icon_width 	229
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @127
@@ -3521,7 +3521,7 @@
 			    InterObjView 	@126
 			    height     	111
 			    y_coord    	21
-			    Nested     	FALSE))
+			    Nested     	TRUE))
 		    (object InterObjView "$UNNAMED$28" @130
 			location   	(1280, 224)
 			font       	(object Font
@@ -3538,7 +3538,7 @@
 			    location   	(1280, 249)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	435
+			    max_width  	471
 			    justify    	0
 			    label      	"")
 			icon       	"control"
@@ -3546,10 +3546,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE00EEC01C5"
-			width      	300
+			width      	157
 			height     	932
-			icon_height 	152
-			icon_width 	145
+			icon_height 	164
+			icon_width 	157
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @131
@@ -3560,7 +3560,7 @@
 			    y_coord    	10
 			    Nested     	FALSE))
 		    (object InterObjView "ThuVienGame" @132
-			location   	(1648, 224)
+			location   	(1648, 225)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -3584,7 +3584,7 @@
 			fill_color 	13434879
 			quidu      	"5DE00F72003E"
 			width      	300
-			height     	932
+			height     	931
 			icon_height 	0
 			icon_width 	0
 			icon_y_offset 	0
@@ -3902,7 +3902,7 @@
 			    location   	(176, 249)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	324
+			    max_width  	360
 			    justify    	0
 			    label      	"")
 			icon       	"Actor"
@@ -3910,10 +3910,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE011B40148"
-			width      	300
+			width      	120
 			height     	1620
-			icon_height 	150
-			icon_width 	108
+			icon_height 	162
+			icon_width 	120
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @149
@@ -3953,7 +3953,7 @@
 			    location   	(544, 250)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	651
+			    max_width  	687
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -3961,10 +3961,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE011B60000"
-			width      	300
+			width      	229
 			height     	1620
-			icon_height 	141
-			icon_width 	217
+			icon_height 	153
+			icon_width 	229
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @153
@@ -3990,7 +3990,7 @@
 			    location   	(976, 250)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	259
+			    max_width  	687
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -3998,7 +3998,7 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE011CB02AF"
-			width      	270
+			width      	229
 			height     	1620
 			icon_height 	153
 			icon_width 	229
@@ -4055,7 +4055,7 @@
 			    location   	(1408, 265)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	435
+			    max_width  	471
 			    justify    	0
 			    label      	"")
 			icon       	"control"
@@ -4063,10 +4063,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE011ED00DA"
-			width      	300
+			width      	157
 			height     	1604
-			icon_height 	152
-			icon_width 	145
+			icon_height 	164
+			icon_width 	157
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @161
@@ -4098,7 +4098,7 @@
 			    y_coord    	-87
 			    Nested     	FALSE))
 		    (object InterObjView "VatPham" @165
-			location   	(1824, 224)
+			location   	(1824, 225)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -4122,7 +4122,7 @@
 			fill_color 	13434879
 			quidu      	"5DE011CE02DE"
 			width      	300
-			height     	1620
+			height     	1619
 			icon_height 	0
 			icon_width 	0
 			icon_y_offset 	0
@@ -4142,7 +4142,7 @@
 			    y_coord    	106
 			    Nested     	FALSE))
 		    (object InterObjView "HoaDon" @168
-			location   	(2224, 224)
+			location   	(2224, 225)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -4166,7 +4166,7 @@
 			fill_color 	13434879
 			quidu      	"5DE012E400BB"
 			width      	300
-			height     	1620
+			height     	1619
 			icon_height 	0
 			icon_width 	0
 			icon_y_offset 	0
@@ -4193,7 +4193,7 @@
 			    y_coord    	0
 			    Nested     	TRUE))
 		    (object InterObjView "KhoHang" @172
-			location   	(2688, 224)
+			location   	(2688, 225)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -4217,7 +4217,7 @@
 			fill_color 	13434879
 			quidu      	"5DE013330167"
 			width      	300
-			height     	1620
+			height     	1619
 			icon_height 	0
 			icon_width 	0
 			icon_y_offset 	0
@@ -4775,7 +4775,7 @@
 			    location   	(176, 249)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	324
+			    max_width  	360
 			    justify    	0
 			    label      	"")
 			icon       	"Actor"
@@ -4783,10 +4783,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE01894007D"
-			width      	300
+			width      	120
 			height     	1028
-			icon_height 	150
-			icon_width 	108
+			icon_height 	162
+			icon_width 	120
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @201
@@ -4819,7 +4819,7 @@
 			    location   	(544, 250)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	651
+			    max_width  	687
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -4827,10 +4827,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE0189702BF"
-			width      	300
+			width      	229
 			height     	1028
-			icon_height 	141
-			icon_width 	217
+			icon_height 	153
+			icon_width 	229
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @204
@@ -4856,7 +4856,7 @@
 			    location   	(912, 266)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	651
+			    max_width  	687
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -4864,10 +4864,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE01B8E004E"
-			width      	300
+			width      	229
 			height     	1012
-			icon_height 	141
-			icon_width 	217
+			icon_height 	153
+			icon_width 	229
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @206
@@ -4900,7 +4900,7 @@
 			    location   	(1280, 250)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	651
+			    max_width  	687
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -4908,10 +4908,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE018C1001F"
-			width      	300
+			width      	229
 			height     	1028
-			icon_height 	141
-			icon_width 	217
+			icon_height 	153
+			icon_width 	229
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @209
@@ -4936,7 +4936,7 @@
 			    y_coord    	17
 			    Nested     	TRUE))
 		    (object InterObjView "VatPham" @212
-			location   	(1728, 224)
+			location   	(1728, 225)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -4960,7 +4960,7 @@
 			fill_color 	13434879
 			quidu      	"5DE01AB901D4"
 			width      	300
-			height     	1028
+			height     	1027
 			icon_height 	0
 			icon_width 	0
 			icon_y_offset 	0
@@ -5285,7 +5285,7 @@
 			    location   	(176, 281)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	324
+			    max_width  	360
 			    justify    	0
 			    label      	"")
 			icon       	"Actor"
@@ -5293,10 +5293,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE01D5801E4"
-			width      	300
+			width      	120
 			height     	1204
-			icon_height 	150
-			icon_width 	108
+			icon_height 	162
+			icon_width 	120
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @230
@@ -5322,7 +5322,7 @@
 			    location   	(544, 282)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	651
+			    max_width  	687
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -5330,10 +5330,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE01D5A01A5"
-			width      	300
+			width      	229
 			height     	1204
-			icon_height 	141
-			icon_width 	217
+			icon_height 	153
+			icon_width 	229
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @232
@@ -5359,7 +5359,7 @@
 			    location   	(912, 298)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	651
+			    max_width  	687
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -5367,10 +5367,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE01DBB01A5"
-			width      	300
+			width      	229
 			height     	1188
-			icon_height 	141
-			icon_width 	217
+			icon_height 	153
+			icon_width 	229
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @234
@@ -5417,7 +5417,7 @@
 			    location   	(1328, 298)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	651
+			    max_width  	687
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -5425,10 +5425,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE021480232"
-			width      	300
+			width      	229
 			height     	1188
-			icon_height 	141
-			icon_width 	217
+			icon_height 	153
+			icon_width 	229
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @239
@@ -5446,7 +5446,7 @@
 			    y_coord    	111
 			    Nested     	TRUE))
 		    (object InterObjView "$UNNAMED$41" @241
-			location   	(1728, 256)
+			location   	(1728, 240)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -5458,10 +5458,10 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@241
-			    location   	(1728, 282)
+			    location   	(1728, 266)
 			    anchor_loc 	1
 			    nlines     	2
-			    max_width  	651
+			    max_width  	316
 			    justify    	0
 			    label      	"")
 			icon       	"boundary"
@@ -5469,10 +5469,10 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE021980203"
-			width      	300
-			height     	1204
-			icon_height 	141
-			icon_width 	217
+			width      	328
+			height     	1220
+			icon_height 	153
+			icon_width 	229
 			icon_y_offset 	0
 			annotation 	1
 			Focus_Of_Control 	(object Focus_Of_Control "" @242

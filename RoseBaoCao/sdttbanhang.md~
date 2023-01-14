@@ -103,7 +103,18 @@
 		stereotype 	"boundary")
 	    (object Class "MHSanPham"
 		quid       	"5DE0002601C5"
-		stereotype 	"boundary")
+		stereotype 	"boundary"
+		operations 	(list Operations
+		    (object Operation "HienThiSanPham"
+			quid       	"5DE031560148"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)
+		    (object Operation "ThemSanPham"
+			quid       	"5DE03178034B"
+			concurrency 	"Sequential"
+			opExportControl 	"Public"
+			uid        	0)))
 	    (object Class "DKThanhToan"
 		quid       	"5DE0029D0138"
 		stereotype 	"control")
@@ -1615,10 +1626,10 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@20
-			    location   	(1035, 195)
+			    location   	(988, 140)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	394
+			    max_width  	488
 			    justify    	0
 			    label      	"MHSanPham")
 			icon       	"boundary"
@@ -1626,8 +1637,26 @@
 			line_color 	3342489
 			fill_color 	13434879
 			quidu      	"5DE0002601C5"
-			width      	412
-			height     	216
+			compartment 	(object Compartment
+			    Parent_View 	@20
+			    location   	(988, 201)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	3
+			    max_width  	378
+			    justify    	1)
+			width      	506
+			height     	326
 			annotation 	8
 			autoResize 	TRUE)
 		    (object ClassView "Class" "Logical View::SanPham" @21
@@ -1700,7 +1729,7 @@
 				    (1248, 735))
 				line_style 	0)))
 		    (object AssociationViewNew "$UNNAMED$12" @25
-			location   	(1240, 462)
+			location   	(1241, 489)
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -1716,27 +1745,27 @@
 			roleview_list 	(list RoleViews
 			    (object RoleView "$UNNAMED$13" @26
 				Parent_View 	@25
-				location   	(8, 254)
+				location   	(9, 281)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5DE0313B0261"
 				client     	@25
 				supplier   	@21
 				vertices   	(list Points
-				    (1240, 462)
+				    (1241, 489)
 				    (1245, 608))
 				line_style 	0)
 			    (object RoleView "$UNNAMED$14" @27
 				Parent_View 	@25
-				location   	(8, 254)
+				location   	(9, 281)
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5DE0313B0263"
 				client     	@25
 				supplier   	@20
 				vertices   	(list Points
-				    (1240, 462)
-				    (1235, 316))
+				    (1241, 489)
+				    (1237, 371))
 				line_style 	0)))))
 	    (object InteractionDiagram "NewDiagram2"
 		mechanism_ref 	@1
