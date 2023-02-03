@@ -1,0 +1,11 @@
+{
+"configuration":    {
+    "loginname":"MAIL BOX loginname",
+    "password":"PASSWORD",
+    "server":"DOMAIN",
+    "port":25,
+    "fromAddress":"E-MAIL ADDRESS",
+    "url":"SDP APPLICATION URL",
+    "technicianKey":"TECHNICIAN KEY GENERATED FROM AN ADMIN TECH ACCOUNT"
+    }
+}
